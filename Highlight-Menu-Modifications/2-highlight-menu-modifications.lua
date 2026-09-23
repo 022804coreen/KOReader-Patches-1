@@ -24,7 +24,7 @@ function ReaderHighlight:init()
 			--- start of button
         ["01_highlight"] = function(this, index) 			-- ["name for button"]=buttons get selected based on numerical order. If you change one, renumber all buttons
             return {
-                icon = _("red"), -- the text that will show on the button
+                icon = _("WTF"), -- the text that will show on the button
                 icon_width = Screen:scaleBySize(ICON_SIZE),
                 icon_height = Screen:scaleBySize(ICON_SIZE),
                 callback = function()
@@ -37,7 +37,7 @@ function ReaderHighlight:init()
         
         ["02_highlight"] = function(this, index)
             return {
-                icon = _("orange"), --- put icon in resources/icons/mdlight
+                icon = _("Favorite"), --- put icon in resources/icons/mdlight
                 icon_width = Screen:scaleBySize(ICON_SIZE),
                 icon_height = Screen:scaleBySize(ICON_SIZE),
                 callback = function()
@@ -48,7 +48,7 @@ function ReaderHighlight:init()
         end,
         ["03_highlight"] = function(this, index)
             return {
-                icon = _("yellow"),
+                icon = _("Character"),
                 icon_width = Screen:scaleBySize(ICON_SIZE),
                 icon_height = Screen:scaleBySize(ICON_SIZE),
                 callback = function()
@@ -59,18 +59,7 @@ function ReaderHighlight:init()
         end,
         ["04_highlight"] = function(this, index)
             return {
-                icon = _("green"), 
-                icon_width = Screen:scaleBySize(ICON_SIZE),
-                icon_height = Screen:scaleBySize(ICON_SIZE),  
-                callback = function()
-                    this:saveHighlightFormatted(true,"lighten","green", index)
-                    this:onClose()
-                end,
-            }
-        end,
-        ["05_highlight"] = function(this, index)
-            return {
-                icon = _("olive"), 
+                icon = _("Aww"), 
                 icon_width = Screen:scaleBySize(ICON_SIZE),
                 icon_height = Screen:scaleBySize(ICON_SIZE),  
                 callback = function()
@@ -79,9 +68,44 @@ function ReaderHighlight:init()
                 end,
             }
         end,
+        ["05_highlight"] = function(this, index)
+            return {
+                icon = _("Heartbreak"), 
+                icon_width = Screen:scaleBySize(ICON_SIZE),
+                icon_height = Screen:scaleBySize(ICON_SIZE),  
+                callback = function()
+                    this:saveHighlightFormatted(true,"lighten","grey", index)
+                    this:onClose()
+                end,
+            }
+        end,
         ["06_highlight"] = function(this, index)
             return {
-                icon = _("cyan"),
+                icon = _("Spicy"),
+                icon_width = Screen:scaleBySize(ICON_SIZE),
+                icon_height = Screen:scaleBySize(ICON_SIZE),
+                callback = function()
+                    this:saveHighlightFormatted(true,"lighten","green", index)
+                    this:onClose()
+                end,
+            }
+        end,
+    
+        ["07_highlight"] = function(this, index)
+            return {
+                icon = _("Funny"),
+                icon_width = Screen:scaleBySize(ICON_SIZE),
+                icon_height = Screen:scaleBySize(ICON_SIZE),
+                callback = function()
+                    this:saveHighlightFormatted(true,"lighten","turquoise", index)
+                    this:onClose()
+                end,
+            }
+        end,
+        
+        ["08_highlight"] = function(this, index)
+            return {
+                icon = _("Hear me out"),
                 icon_width = Screen:scaleBySize(ICON_SIZE),
                 icon_height = Screen:scaleBySize(ICON_SIZE),
                 callback = function()
@@ -90,62 +114,47 @@ function ReaderHighlight:init()
                 end,
             }
         end,
-    
-        ["07_highlight"] = function(this, index)
+        ["09_highlight"] = function(this, index)
             return {
-                icon = _("blue"),
+                icon = _("Sad"),
                 icon_width = Screen:scaleBySize(ICON_SIZE),
-                icon_height = Screen:scaleBySize(ICON_SIZE),
+                icon_height = Screen:scaleBySize(ICON_SIZE), 
                 callback = function()
                     this:saveHighlightFormatted(true,"lighten","blue", index)
                     this:onClose()
                 end,
             }
         end,
-        
-        ["08_highlight"] = function(this, index)
+        ["10_highlight"] = function(this, index)
             return {
-                icon = _("purple"),
+                icon = _("Deep"),
                 icon_width = Screen:scaleBySize(ICON_SIZE),
-                icon_height = Screen:scaleBySize(ICON_SIZE),
+                icon_height = Screen:scaleBySize(ICON_SIZE),     
+                callback = function()
+                    this:saveHighlightFormatted(true,"lighten","indigo", index)
+                    this:onClose()
+                end,
+            }
+        end,
+		 ["11_highlight"] = function(this, index)
+            return {
+                icon = _("Sana all"),
+                icon_width = Screen:scaleBySize(ICON_SIZE),
+                icon_height = Screen:scaleBySize(ICON_SIZE),     
                 callback = function()
                     this:saveHighlightFormatted(true,"lighten","purple", index)
                     this:onClose()
                 end,
             }
         end,
-        ["09_highlight"] = function(this, index)
+        ["12_highlight"] = function(this, index)
             return {
-                icon = _("pink"),
-                icon_width = Screen:scaleBySize(ICON_SIZE),
-                icon_height = Screen:scaleBySize(ICON_SIZE), 
-                callback = function()
-                    this:saveHighlightFormatted(true,"lighten","pink", index)
-                    this:onClose()
-                end,
-            }
-        end,
-        ["10_highlight"] = function(this, index)
-            return {
-                icon = _("gray"),
+                icon = _("Kilig"),
                 icon_width = Screen:scaleBySize(ICON_SIZE),
                 icon_height = Screen:scaleBySize(ICON_SIZE),     
                 callback = function()
-                    this:saveHighlightFormatted(true,"lighten","gray", index)
+                    this:saveHighlightFormatted(true,"lighten","pink", index)
                     this:onClose()
-                end,
-            }
-        end,
-        ["11_select"] = function(this, index)
-            return {
-                text = index and _("Extend") or _("Select"),
-                font_size = 14,
-                enabled = not (index and this.ui.annotation.annotations[index].text_edited),
-                callback = function()
-                    this:startSelection(index)
-                    this:onClose()
-                    if not Device:isTouchDevice() then
-                        self:onStartHighlightIndicator()
                     end
                 end,
             }
